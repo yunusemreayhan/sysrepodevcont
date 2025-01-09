@@ -1,0 +1,7 @@
+services:
+  devmachine:
+    image: ubuntu
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - '.\src:/root/src'
