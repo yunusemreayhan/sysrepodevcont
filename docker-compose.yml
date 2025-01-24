@@ -1,7 +1,9 @@
 services:
   devmachine:
-    image: ubuntu
-    restart: unless-stopped
     tty: true
+    build:
+      context: devmachine
     volumes:
-      - '.\src:/root/src'
+      - ./:/root/sysrepo-pg/
+      - c:/Users/ehnxnsm/.vscode-server:/root/.vscode-server
+      - c:/Users/ehnxnsm/.vscodedocker:/root/sysrepo-pg/.vscode/
