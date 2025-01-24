@@ -1,0 +1,15 @@
+module ismailemre {
+    namespace "urn:ismailemre";
+    prefix ie;
+
+    revision "2025-01-25" {
+        description "Initial module.";
+    }
+
+    container initial-container {
+        leaf initial-leaf {
+            type string;
+            description "Initial leaf.";
+        }
+    }
+}
