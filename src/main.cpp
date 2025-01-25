@@ -19,7 +19,7 @@ class Sysrepo {
         }
         int res = sr_session_start(connection, SR_DS_RUNNING, &session);
         if (SR_ERR_OK != res) {
-            std::cout << "sr_session_start Error: " << rc << std::endl;
+            std::cout << "sr_session_start Error: " << res << std::endl;
             return false;
         }
         return true;
@@ -35,7 +35,7 @@ class Sysrepo {
 
         int res = sr_disconnect(this->connection);
         if (SR_ERR_OK != res) {
-            std::cout << "sr_disconnect Error: " << rc << std::endl;
+            std::cout << "sr_disconnect Error: " << res << std::endl;
         } else {
             std::cout << "sr_disconnect OK" << std::endl;
         }
