@@ -31,6 +31,7 @@
         "ms-vscode.live-server",
         "redhat.vscode-xml",
         "redhat.vscode-yaml",
-        "vsls-contrib.codetour"
+        "vsls-contrib.codetour",
+        "IgorSbitnev.error-gutters"
     ]
 }
