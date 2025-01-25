@@ -5,5 +5,9 @@ services:
       context: devmachine
     volumes:
       - ./:/root/sysrepo-pg/
-      - c:/Users/ehnxnsm/.vscode-server:/root/.vscode-server
-      - c:/Users/ehnxnsm/.vscodedocker:/root/sysrepo-pg/.vscode/
+      - vscode-server-data:/root/.vscode-server
+      - vscode-settings:/root/sysrepo-pg/.vscode/
+
+volumes:
+  vscode-server-data:
+  vscode-settings:
