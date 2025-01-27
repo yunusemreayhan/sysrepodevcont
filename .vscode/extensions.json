@@ -1,11 +1,10 @@
 {
     "recommendations": [
         "eamodio.gitlens",
-        "ms-azuretools.vscode-docker",
-        "ms-vscode-remote.remote-containers",
-        "ms-vscode-remote.remote-ssh",
         "GitHub.copilot",
         "GitHub.copilot-chat",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.cpptools",
         "GitHub.vscode-pull-request-github",
         "github.vscode-github-actions",
         "llvm-vs-code-extensions.vscode-clangd",
