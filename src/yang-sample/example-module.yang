@@ -1,0 +1,20 @@
+module example-module {
+  namespace "http://example.com/ns/example-module";
+  prefix "ex";
+
+  import ietf-yang-types {
+    prefix yang;
+  }
+
+  container example-container {
+    list example-list {
+      key "name";
+      leaf name {
+        type string;
+      }
+      leaf value {
+        type string;
+      }
+    }
+  }
+}

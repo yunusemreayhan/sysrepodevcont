@@ -26,4 +26,6 @@ RUN bash -c "echo 'root:1' | chpasswd"
 
 RUN bash -c "git config --global core.autocrlf true"
 
+RUN apt install gdb -y
+
 # RUN bash -c "ls /root/sysrepo-pg/install-yangs.sh && chmod +x /root/sysrepo-pg/install-yangs.sh && /root/sysrepo-pg/install-yangs.sh"

@@ -24,12 +24,33 @@ public:
     return true;
   }
 
-  int setItem(const char *xpath) {
+  int setItemStr(const char *xpath, const char *value = NULL) {
     // Set a list instance
-    int rc = sr_set_item_str(session, xpath, NULL, NULL, SR_EDIT_DEFAULT);
+    std::cout << "Setting item [" << xpath << "] = " << value << std::endl;
+    int rc = sr_set_item_str(session, xpath, value, NULL, SR_EDIT_DEFAULT);
     if (rc != SR_ERR_OK) {
       fprintf(stderr, "Error setting item: %s\n", sr_strerror(rc));
+    } else {
+      std::cout << "Item set OK [" << xpath << "]" << std::endl;
     }
+
+    // Apply the changes
+    rc = sr_apply_changes(session, 0);
+    if (rc != SR_ERR_OK) {
+      fprintf(stderr, "Error applying changes: %s\n", sr_strerror(rc));
+    } else {
+      std::cout << "Changes applied OK [" << xpath << "]" << std::endl;
+    }
+
+    sr_val_t *value_to_receive = NULL;
+    rc = sr_get_item(session, xpath, 0, &value_to_receive);
+    if (rc != SR_ERR_OK) {
+      fprintf(stderr, "Error getting item: %s\n", sr_strerror(rc));
+    } else {
+      std::cout << "Item received OK [" << xpath
+                << "] = " << value_to_receive->data.string_val << std::endl;
+    }
+    sr_free_val(value_to_receive);
     return rc;
   }
 
@@ -58,6 +79,11 @@ int main() {
   } else {
     std::cout << "Connected to sysrepo" << std::endl;
   }
-  sysrepo.setItem("/example-module:example-container/example-list[name='exampleName']");
+  const char *xpath =
+      "/example-module:example-container/example-list[name='exampleName3']/value";
+  const char *value_str = "exampleValue"; // This is just for illustration
+  sysrepo.setItemStr(xpath, value_str);
+  // sysrepocfg --export --datastore running --format json -m example-module
+
   return 0;
 }
