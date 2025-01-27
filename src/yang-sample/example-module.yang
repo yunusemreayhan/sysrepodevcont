@@ -9,11 +9,19 @@ module example-module {
   container example-container {
     list example-list {
       key "name";
+      unique "ip port";
+      unique "name";
       leaf name {
         type string;
       }
       leaf value {
         type string;
+      }
+      leaf ip {
+        type string;
+      }
+      leaf port {
+        type int32;
       }
     }
   }

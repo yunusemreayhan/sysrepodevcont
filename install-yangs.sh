@@ -1,5 +1,7 @@
 #!/bin/bash
-
+sysrepoctl --uninstall ieee802-dot1q-bridge -v3
+sysrepoctl --uninstall ieee802-dot1q-vlan-bridge -v3
+sysrepoctl --uninstall example-module -v3
 sysrepoctl --install /root/sysrepo-pg/yang/standard/ieee/published/802.1/ieee802-dot1q-bridge.yang \
            --install /root/sysrepo-pg/yang/standard/ieee/published/802.1/ieee802-dot1q-vlan-bridge.yang \
            --install /root/sysrepo-pg/src/yang-sample/example-module.yang \

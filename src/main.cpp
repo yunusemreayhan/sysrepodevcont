@@ -46,9 +46,12 @@ public:
     rc = sr_get_item(session, xpath, 0, &value_to_receive);
     if (rc != SR_ERR_OK) {
       fprintf(stderr, "Error getting item: %s\n", sr_strerror(rc));
-    } else {
-      std::cout << "Item received OK [" << xpath
+    } else if (strcmp(value_to_receive->data.string_val, value) == 0) {
+      std::cout << "Item received as expected [" << xpath
                 << "] = " << value_to_receive->data.string_val << std::endl;
+    } else {
+        std::cout << "Item received as not expected [" << xpath
+                    << "] = [" << value_to_receive->data.string_val << "], [" << value << "]" << std::endl;
     }
     sr_free_val(value_to_receive);
     return rc;
@@ -80,8 +83,8 @@ int main() {
     std::cout << "Connected to sysrepo" << std::endl;
   }
   const char *xpath =
-      "/example-module:example-container/example-list[name='exampleName3']/value";
-  const char *value_str = "exampleValue"; // This is just for illustration
+      "/example-module:example-container/example-list[name='exampleName5']/value";
+  const char *value_str = "exampleValue5"; // This is just for illustration
   sysrepo.setItemStr(xpath, value_str);
   // sysrepocfg --export --datastore running --format json -m example-module
 

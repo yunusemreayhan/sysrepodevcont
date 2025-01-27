@@ -4,8 +4,8 @@ services:
     build:
       context: devmachine
     volumes:
-      - ./:/root/sysrepo-pg/
-      - vscode-server-data:/root/.vscode-server
+      - ./:/repos/sysrepo-pg/
+      - sysrepodevcontainer_home_folder:/root/
 
 volumes:
-  vscode-server-data:
+  sysrepodevcontainer_home_folder:
