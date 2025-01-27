@@ -1,0 +1,6 @@
+<device xmlns="http://example.com/network-config">
+    <hostname>Router1</hostname>
+    <ip-address>192.168.1.3</ip-address>
+    <subnet-mask>255.255.100.0</subnet-mask>
+    <gateway>192.168.1.254</gateway>
+</device>

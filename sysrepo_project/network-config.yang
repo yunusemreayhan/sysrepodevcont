@@ -1,0 +1,37 @@
+module network-config {
+    yang-version 1.1;
+    namespace "http://example.com/network-config";
+    prefix netcfg;
+
+    import ietf-inet-types {
+        prefix inet;
+    }
+
+    revision 2025-01-20 {
+        description "Initial revision for network configuration module";
+    }
+
+    container device {
+        description "Network device configuration";
+
+        leaf hostname {
+            type string;
+            description "Hostname of the device";
+        }
+
+        leaf ip-address {
+            type inet:ipv4-address;
+            description "IPv4 address of the device";
+        }
+
+        leaf subnet-mask {
+            type inet:ipv4-address;
+            description "Subnet mask for the device";
+        }
+
+        leaf gateway {
+            type inet:ipv4-address;
+            description "Default gateway for the device";
+        }
+    }
+}
