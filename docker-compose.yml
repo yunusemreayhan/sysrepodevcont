@@ -6,8 +6,6 @@ services:
     volumes:
       - ./:/root/sysrepo-pg/
       - vscode-server-data:/root/.vscode-server
-      - vscode-settings:/root/sysrepo-pg/.vscode/
 
 volumes:
   vscode-server-data:
-  vscode-settings:
