@@ -3,10 +3,18 @@ module ismailemre {
     prefix ie;
 
     revision "2025-01-25" {
-        description "Initial module.";
+        description "Initial module with a feature.";
     }
 
+    // Feature tanımı
+    feature high-performance {
+        description "This feature enables high-performance optimizations.";
+    }
+
+    // Opsiyonel özelliğe bağlı container
     container initial-container {
+        if-feature "high-performance"; // Bu container, sadece high-performance etkinse kullanılabilir.
+        
         leaf initial-leaf {
             type string;
             description "Initial leaf.";
