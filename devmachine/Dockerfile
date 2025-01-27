@@ -12,6 +12,7 @@ RUN apt install python3 -y
 RUN apt install python3-pip -y
 RUN apt install python3-venv -y
 RUN apt install gdb -y
+RUN apt install valgrind -y
 RUN /usr/bin/python3 -m venv /repos/.venv
 
 RUN echo "version update 0.0.1"
