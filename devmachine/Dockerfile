@@ -23,4 +23,7 @@ RUN sh ~/.vim_runtime/install_awesome_vimrc.sh
 RUN bash -c "source /root/.venv/bin/activate && python3 -m pip install --upgrade pip"
 RUN bash -c "source /root/.venv/bin/activate && python3 -m pip install -r /root/yang-analysis/requirements.txt"
 RUN bash -c "echo 'root:1' | chpasswd"
+
+RUN bash -c "git config --global core.autocrlf true"
+
 # RUN bash -c "ls /root/sysrepo-pg/install-yangs.sh && chmod +x /root/sysrepo-pg/install-yangs.sh && /root/sysrepo-pg/install-yangs.sh"
