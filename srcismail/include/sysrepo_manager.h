@@ -3,27 +3,20 @@
 
 #include <string>
 
-// Modül yükleme fonksiyonu
-void installModule(const std::string& modulePath);
+using namespace std;
 
-// Özellik etkinleştirme fonksiyonu
-void enableFeature(const std::string& moduleName, const std::string& featureName);
-
-// Özellik devre dışı bırakma fonksiyonu
-void disableFeature(const std::string& moduleName, const std::string& featureName);
-
-// Modül güncelleme fonksiyonu
-void updateModule(const std::string& moduleName);
-
-// Modül silme fonksiyonu
-void deleteModule(const std::string& moduleName);
-
-// Belirli bir modülün özelliklerini listeleme fonksiyonu
-void listModuleFeatures(const std::string& moduleName);
-
-// Sistemdeki tüm modülleri listeleme fonksiyonu
+// Modül yönetimi fonksiyonları
+void installModule(const string& modulePath);
+void enableFeature(const string& moduleName, const string& featureName);
+void disableFeature(const string& moduleName, const string& featureName);
+void updateModule(const string& moduleName);
+void deleteModule(const string& moduleName);
+void listModuleFeatures(const string& moduleName);
 void listAllModules();
+void showModuleDetails(const string& moduleName);
 
-void showModuleDetails(const std::string& moduleName);
+// `sysrepocfg` ile edit işlemi fonksiyonu
+void editConfig(const string& editFile, const string& datastore, const string& format, const string& module);
+void exportConfig(const string& datastore, const string& moduleName);
 
 #endif // SYSREPO_MANAGER_H
