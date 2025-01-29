@@ -1,0 +1,3 @@
+[submodule "yang-analysis"]
+	path = yang-analysis
+	url = https://github.com/yunusemreayhan/yang-analysis.git
