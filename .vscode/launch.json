@@ -27,8 +27,8 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "CMake: build"
+            "preLaunchTask": "install",
+            "postDebugTask": "dump"
         }
-
     ]
 }

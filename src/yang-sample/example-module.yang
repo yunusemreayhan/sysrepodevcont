@@ -23,6 +23,24 @@ module example-module {
       leaf port {
         type int32;
       }
+      list sub-list {
+        key "name";
+        leaf name {
+          type string;
+        }
+        leaf value {
+          type string;
+        }
+        list sub-sub-list {
+          key "name";
+          leaf name {
+            type string;
+          }
+          leaf value {
+            type string;
+          }
+        }
+      }
     }
   }
 }

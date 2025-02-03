@@ -136,7 +136,22 @@ int main() {
   sysrepo.setItemStr(xpath, value_str);
   sysrepo.setItemStr(xpathip, valueip_str);
   sysrepo.setItemInt(xpathport, valueport_str);
+
+  
+  const char *sublistdirect =
+      "/example-module:example-container/example-list[name='exampleName7']/sub-list[name='sublistName7']/value";
+  const char* sublistdirectval = "sublist value"; // This is just for illustration
   // sysrepocfg --export --datastore running --format json -m example-module
+  sysrepo.setItemStr(sublistdirect, sublistdirectval);
+
+  
+
+  
+  const char *subsublistdirect =
+      "/example-module:example-container/example-list[name='exampleName8']/sub-list[name='sublistName8']/sub-sub-list[name='subsublistName8']/value";
+  const char* subsublistdirectval = "sublist value 8"; // This is just for illustration
+  // sysrepocfg --export --datastore running --format json -m example-module
+  sysrepo.setItemStr(subsublistdirect, subsublistdirectval);
 
   return 0;
 }
