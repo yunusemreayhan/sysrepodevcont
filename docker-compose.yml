@@ -4,7 +4,7 @@ services:
     build:
       context: devmachine
     volumes:
-      - ./:/repos/sysrepo-pg/
+      - .:/repos/sysrepodevcont
       - sysrepodevcontainer_home_folder:/root/
 
 volumes:

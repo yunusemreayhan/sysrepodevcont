@@ -13,17 +13,11 @@ RUN apt install python3-pip -y
 RUN apt install python3-venv -y
 RUN apt install gdb -y
 RUN apt install valgrind -y
-RUN /usr/bin/python3 -m venv /repos/sysrepo-pg/.venv
 
 RUN echo "version update 0.0.1"
 
 RUN cd ~ && git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 RUN sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-RUN bash -c "source /repos/sysrepo-pg/.venv/bin/activate && python3 -m pip install --upgrade pip"
-RUN bash -c "source /repos/sysrepo-pg/.venv/bin/activate && python3 -m pip install -r /repos/sysrepo-pg/yang-analysis/requirements.txt"
-RUN bash -c "echo 'root:1' | chpasswd"
-
-RUN bash -c "git config --global core.autocrlf true"
-
-# RUN bash -c "ls /repos/sysrepo-pg/install-yangs.sh && chmod +x /repos/sysrepo-pg/install-yangs.sh && /repos/sysrepo-pg/install-yangs.sh"
+RUN mkdir -p /repos/sysrepodevcont
+WORKDIR /repos/sysrepodevcont

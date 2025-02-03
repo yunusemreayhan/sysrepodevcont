@@ -2,6 +2,6 @@
     "name": "sysrepo-playground",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "devmachine",
-    "workspaceFolder": "/repos/sysrepo-pg/",
+    "workspaceFolder": "/repos/sysrepodevcont/",
     "shutdownAction": "stopCompose"
 }
