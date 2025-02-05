@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "install",
+            "type": "shell",
+            "command": "${workspaceFolder}/install.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "linux": {
+                "command": "${workspaceFolder}/install.sh"
+            },
+            "dependsOn": [
+                "CMake: build"
+            ]
+        }, {
+            "label": "dump",
+            "type": "shell",
+            "command": "${workspaceFolder}/dump.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "linux": {
+                "command": "sysrepocfg --export --datastore running --format json -m example-module"
+            },
+        }
+    ]
+}
